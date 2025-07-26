@@ -15,15 +15,17 @@ async function main() {
       description:
         "Papua Mandiri is an innovative digital platform aimed at empowering local communities in Papua through two main pillars: education and economics. It provides a platform for sharing learning materials on local natural resource management, while also facilitating a workflow through which community-led products can be offered, reviewed, and ordered by government agencies.",
       url: "https://github.com/Torikh42/papua-mandiri",
-      techstack: "Nextjs, Supabase, Typescript, Tailwind CSS, shadcn/ui, Vercel, cloudinary, DeepSeek API",
-      imageUrl: "/papua-mandiri.png", 
+      techstack:
+        "Nextjs, Supabase, Typescript, Tailwind CSS, shadcn/ui, Vercel, cloudinary, DeepSeek API",
+      imageUrl: "/papua-mandiri.png",
     },
     {
       title: "SEA Catering",
       description:
         "This project was created as part of the registration requirements for Compfest Academy. I used Next.js and Supabase to build it. The website design was made with Tailwind CSS, and I used Vercel to publish it online.",
       url: "https://github.com/Torikh42/sea-catering",
-      techstack: "Nextjs, Supabase, Typescript, Tailwind CSS, Vercel, cloudinary, shadcn/ui",
+      techstack:
+        "Nextjs, Supabase, Typescript, Tailwind CSS, Vercel, cloudinary, shadcn/ui",
       imageUrl: "/sea-catering.png",
     },
     {
@@ -32,7 +34,7 @@ async function main() {
         "Fix My City is a website that serves as a public complaints platform. It allows citizens to report problems in their city, such as damaged infrastructure, inadequate public services, or environmental issues. Each report will be reviewed and followed up by local authorities.",
       url: "https://github.com/Torikh42/Capstone-FixMyCity-Backend",
       techstack: "Node.js, Express, Prisma, PostgreSQL, cloudinary, Swagger",
-      imageUrl: "/fixmycity.png", 
+      imageUrl: "/fixmycity.png",
     },
   ];
 
