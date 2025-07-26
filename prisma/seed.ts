@@ -17,7 +17,8 @@ async function main() {
       url: "https://github.com/Torikh42/papua-mandiri",
       techstack:
         "Nextjs, Supabase, Typescript, Tailwind CSS, shadcn/ui, Vercel, cloudinary, DeepSeek API",
-      imageUrl: "/papua-mandiri.png",
+      imageUrl:
+        "https://res.cloudinary.com/dsw1iot8d/image/upload/v1753522721/papua-mandiri_i9whoi.png",
     },
     {
       title: "SEA Catering",
@@ -26,7 +27,8 @@ async function main() {
       url: "https://github.com/Torikh42/sea-catering",
       techstack:
         "Nextjs, Supabase, Typescript, Tailwind CSS, Vercel, cloudinary, shadcn/ui",
-      imageUrl: "/sea-catering.png",
+      imageUrl:
+        "https://res.cloudinary.com/dsw1iot8d/image/upload/v1753522728/sea-catering_siufqb.png",
     },
     {
       title: "Fix My City (Backend)",
@@ -34,7 +36,8 @@ async function main() {
         "Fix My City is a website that serves as a public complaints platform. It allows citizens to report problems in their city, such as damaged infrastructure, inadequate public services, or environmental issues. Each report will be reviewed and followed up by local authorities.",
       url: "https://github.com/Torikh42/Capstone-FixMyCity-Backend",
       techstack: "Node.js, Express, Prisma, PostgreSQL, cloudinary, Swagger",
-      imageUrl: "/fixmycity.png",
+      imageUrl:
+        "https://res.cloudinary.com/dsw1iot8d/image/upload/v1753522701/fixmycity_vu84qz.png",
     },
   ];
 
