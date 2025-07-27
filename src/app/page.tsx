@@ -76,7 +76,7 @@ export default function Home() {
     description:
       "Mahasiswa Sistem Informasi di Universitas Pembangunan Nasional “Veteran” Jakarta dengan minat dalam pengembangan backend. Memiliki pengalaman dalam organisasi serta kompetisi pencak silat. Menguasai teknologi backend basic dan frontend basic serta beberapa bahasa pemrograman seperti JavaScript, Node.js, MySQL, MongoDB, Express, C, C++, Git, dan GitHub.",
     skills: {
-      "Bahasa Pemrograman": ["JavaScript/TypeScript", "C/C++"],
+      "Programming Language": ["JavaScript/TypeScript", "C/C++"],
       Backend: [
         "Node.js",
         "Express.js",
@@ -107,6 +107,10 @@ export default function Home() {
       "Juara 1 Olimpiade Olahraga Siswa Nasional (02SN) se-Kabupaten/Kota (2022)",
     ],
     certifications: [
+      {
+        name: "Sertifikat kelulusan Study Club Backend Beginner KSM Android UPNVJ",
+        date: "July 2025",
+      },
       {
         name: "Sertifikat kelulusan Study Club Backend Basic KSM Android UPNVJ",
         date: "Jan 2025",
@@ -140,7 +144,7 @@ export default function Home() {
 
   const skillCategories = [
     {
-      name: "Bahasa Pemrograman",
+      name: "Programming Language",
       color: "bg-gradient-to-r from-purple-500 to-pink-500",
       textColor: "text-white",
     },
