@@ -108,6 +108,10 @@ export default function Home() {
     ],
     certifications: [
       {
+        name: "Responsive Web Design - FreeCodeCamp",
+        date: "July 2025",
+      },
+      {
         name: "Sertifikat kelulusan Study Club Backend Beginner KSM Android UPNVJ",
         date: "July 2025",
       },
