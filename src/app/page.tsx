@@ -54,9 +54,10 @@ export default function Home() {
         const data = await response.json();
         setProjects(data);
       } catch (err) {
-        setError(
-          err instanceof Error ? err.message : "An unknown error occurred"
-        );
+        const errorMessage =
+          err instanceof Error ? err.message : "An unknown error occurred";
+        console.error("Project fetch error:", err);
+        setError(errorMessage);
       } finally {
         setLoading(false);
       }
