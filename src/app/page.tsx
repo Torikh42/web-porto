@@ -102,9 +102,9 @@ export default function Home() {
     ],
     achievements: [
       "Top 4 Finalist Android Hackathon x Slashcom 2025",
-      "Juara 2 Kejuaraan Pencak Silat tingkat Nasional BNN CUP 3 (2023)",
+      "Juara 1 Olimpiade Olahraga Siswa Nasional (02SN) se-Kabupaten/Kota (2023)",
+      "Juara 1 Kejuaraan Pencak Silat tingkat Nasional Satria Bumi Pamungkas Open 2 (2022)",
       "Juara 1 Kejuaraan Pencak Silat tingkat Nasional Bekasi Nasional Championship 1 (2022)",
-      "Juara 1 Olimpiade Olahraga Siswa Nasional (02SN) se-Kabupaten/Kota (2022)",
     ],
     certifications: [
       {
