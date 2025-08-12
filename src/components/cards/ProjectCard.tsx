@@ -16,14 +16,13 @@ interface Project {
 interface ProjectCardProps {
   project: Project;
   setSelectedProject: (project: Project) => void;
-  itemVariants: any; // Assuming itemVariants is from framer-motion, type can be more specific if needed
+
 }
 
-export default function ProjectCard({ project, setSelectedProject, itemVariants }: ProjectCardProps) {
+export default function ProjectCard({ project, setSelectedProject }: ProjectCardProps) {
   return (
     <motion.div
       key={project.id}
-      variants={itemVariants}
       onClick={() => setSelectedProject(project)}
       className="cursor-pointer group"
       whileHover={{ y: -10 }}

@@ -136,10 +136,7 @@ export default function Home() {
     },
   };
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1 },
-  };
+
 
   return (
     <div className="text-foreground min-h-screen font-sans">
@@ -228,7 +225,7 @@ export default function Home() {
                     key={project.id}
                     project={project}
                     setSelectedProject={setSelectedProject}
-                    itemVariants={itemVariants}
+          
                   />
                 ))}
               </motion.div>
