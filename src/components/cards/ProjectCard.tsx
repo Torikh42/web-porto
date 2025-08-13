@@ -16,10 +16,12 @@ interface Project {
 interface ProjectCardProps {
   project: Project;
   setSelectedProject: (project: Project) => void;
-
 }
 
-export default function ProjectCard({ project, setSelectedProject }: ProjectCardProps) {
+export default function ProjectCard({
+  project,
+  setSelectedProject,
+}: ProjectCardProps) {
   return (
     <motion.div
       key={project.id}

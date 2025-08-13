@@ -8,7 +8,9 @@ interface AchievementsCardProps {
   achievements: string[];
 }
 
-export default function AchievementsCard({ achievements }: AchievementsCardProps) {
+export default function AchievementsCard({
+  achievements,
+}: AchievementsCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

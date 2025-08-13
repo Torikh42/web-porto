@@ -14,7 +14,9 @@ interface CertificationsCardProps {
   certifications: Certification[];
 }
 
-export default function CertificationsCard({ certifications }: CertificationsCardProps) {
+export default function CertificationsCard({
+  certifications,
+}: CertificationsCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -36,9 +38,7 @@ export default function CertificationsCard({ certifications }: CertificationsCar
           <div className="space-y-4">
             {certifications.map((cert, index) => (
               <div key={index} className="p-4 bg-black/20 rounded-lg">
-                <h4 className="font-semibold text-white">
-                  {cert.name}
-                </h4>
+                <h4 className="font-semibold text-white">{cert.name}</h4>
                 <p className="text-sm text-cyan-400 font-medium">
                   {cert.date}
                   {cert.score && ` • Score: ${cert.score}`}

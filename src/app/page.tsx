@@ -10,9 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import {
-  Github,
-} from "lucide-react";
+import { Github } from "lucide-react";
 import ProfileSection from "@/components/sections/ProfileSection";
 import TechnicalSkillsCard from "@/components/cards/TechnicalSkillsCard";
 import ExperienceCard from "@/components/cards/ExperienceCard";
@@ -20,7 +18,6 @@ import AchievementsCard from "@/components/cards/AchievementsCard";
 import CertificationsCard from "@/components/cards/CertificationsCard";
 import ProjectCard from "@/components/cards/ProjectCard";
 
-// Definisikan tipe data untuk sebuah proyek
 interface Project {
   id: number;
   title: string;
@@ -31,14 +28,11 @@ interface Project {
 }
 
 export default function Home() {
-  // State untuk menyimpan data proyek, status loading, dan error
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  // State untuk menyimpan proyek yang dipilih untuk ditampilkan di modal
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  // Mengambil data proyek dari API saat komponen dimuat
   useEffect(() => {
     async function fetchProjects() {
       try {
@@ -60,7 +54,6 @@ export default function Home() {
     fetchProjects();
   }, []);
 
-  // Data profile
   const profileData = {
     name: "Torikh Abdullah Naser",
     title: "Backend Developer & Information Systems Student",
@@ -79,6 +72,9 @@ export default function Home() {
         "PostgreSQL",
         "MongoDB",
         "Prisma ORM",
+        "Supabase", 
+        "NeonDB",
+        "Clerk"
       ],
       Frontend: ["ReactJS", "Next.js"],
       "Version Control": ["Git/GitHub"],
@@ -127,7 +123,6 @@ export default function Home() {
     ],
   };
 
-  // Konfigurasi animasi untuk Framer Motion
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -135,8 +130,6 @@ export default function Home() {
       transition: { staggerChildren: 0.1 },
     },
   };
-
-
 
   return (
     <div className="text-foreground min-h-screen font-sans">
@@ -225,7 +218,6 @@ export default function Home() {
                     key={project.id}
                     project={project}
                     setSelectedProject={setSelectedProject}
-          
                   />
                 ))}
               </motion.div>
@@ -234,7 +226,7 @@ export default function Home() {
                 open={!!selectedProject}
                 onOpenChange={(isOpen) => !isOpen && setSelectedProject(null)}
               >
-                <DialogContent className="sm:max-w-[600px] bg-slate-900/80 backdrop-blur-xl border-slate-700/50 shadow-2xl text-white">
+                <DialogContent className="sm:max-w-[600px] bg-slate-900/80 backdrop-blur-xl border-slate-700/50 shadow-2xl text-white max-h-[90vh] grid grid-rows-[auto_1fr]">
                   {selectedProject && (
                     <>
                       <DialogHeader>
@@ -242,7 +234,7 @@ export default function Home() {
                           {selectedProject.title}
                         </DialogTitle>
                       </DialogHeader>
-                      <div className="mt-4">
+                      <div className="mt-4 overflow-y-auto">
                         {selectedProject.imageUrl && (
                           <div className="relative h-64 w-full rounded-xl overflow-hidden mb-4 shadow-lg">
                             <Image

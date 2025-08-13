@@ -9,7 +9,9 @@ interface TechnicalSkillsCardProps {
   skills: { [key: string]: string[] };
 }
 
-export default function TechnicalSkillsCard({ skills }: TechnicalSkillsCardProps) {
+export default function TechnicalSkillsCard({
+  skills,
+}: TechnicalSkillsCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
@@ -29,31 +31,29 @@ export default function TechnicalSkillsCard({ skills }: TechnicalSkillsCardProps
         </CardHeader>
         <CardContent>
           <div className="space-y-6">
-            {Object.entries(skills).map(
-              ([category, skillList]) => (
-                <div key={category}>
-                  <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold mb-3 bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">
-                    {category}
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {skillList.map((skill) => (
-                      <motion.div
-                        key={skill}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Badge
-                          variant="secondary"
-                          className="text-xs bg-slate-700/50 text-slate-200 hover:bg-slate-700/80 transition-all duration-200 shadow-sm border border-slate-500/50"
-                        >
-                          {skill}
-                        </Badge>
-                      </motion.div>
-                    ))}
-                  </div>
+            {Object.entries(skills).map(([category, skillList]) => (
+              <div key={category}>
+                <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold mb-3 bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">
+                  {category}
                 </div>
-              )
-            )}
+                <div className="flex flex-wrap gap-2">
+                  {skillList.map((skill) => (
+                    <motion.div
+                      key={skill}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Badge
+                        variant="secondary"
+                        className="text-xs bg-slate-700/50 text-slate-200 hover:bg-slate-700/80 transition-all duration-200 shadow-sm border border-slate-500/50"
+                      >
+                        {skill}
+                      </Badge>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </CardContent>
       </Card>

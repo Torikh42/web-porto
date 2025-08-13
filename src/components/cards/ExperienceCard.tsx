@@ -37,9 +37,7 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
           <div className="space-y-4">
             {experience.map((exp, index) => (
               <div key={index} className="p-4 bg-black/20 rounded-lg">
-                <h4 className="font-bold text-lg text-white">
-                  {exp.title}
-                </h4>
+                <h4 className="font-bold text-lg text-white">{exp.title}</h4>
                 <p className="text-sm font-medium text-cyan-400 mb-3">
                   {exp.company} • {exp.period}
                 </p>
