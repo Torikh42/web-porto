@@ -39,6 +39,16 @@ async function main() {
       imageUrl:
         "https://res.cloudinary.com/dsw1iot8d/image/upload/v1753522701/fixmycity_vu84qz.png",
     },
+    {
+      title: "ZooMate",
+      description:
+        "ZooMate is a mobile application designed to streamline daily zoo operations by digitizing crucial workflows for keepers and staff. Featuring QR code scanning for quick access to animal data, an interactive map for real-time status tracking, and a centralized task management system, the app enhances efficiency, communication, and overall animal welfare.",
+      url: "https://github.com/Torikh42/ZooMate",
+      techstack:
+        "React Native, Expo, Supabase, Tailwind CSS, Cloudinary, Google Maps API",
+      imageUrl:
+        "https://res.cloudinary.com/dsw1iot8d/image/upload/v1759743632/zoomate_hewnvp.jpg",
+    },
   ];
 
   for (const p of projects) {

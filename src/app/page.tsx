@@ -72,12 +72,13 @@ export default function Home() {
         "PostgreSQL",
         "MongoDB",
         "Prisma ORM",
-        "Supabase", 
+        "Supabase",
         "NeonDB",
-        "Clerk"
+        "Clerk",
       ],
-      Frontend: ["ReactJS", "Next.js"],
+      Frontend: ["ReactJS", "Tailwind CSS", "Next.js", "React Native", "Expo"],
       "Version Control": ["Git/GitHub"],
+      Tools: ["Postman", "Docker", "Figma"],
     },
     experience: [
       {
