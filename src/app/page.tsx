@@ -84,11 +84,12 @@ export default function Home() {
       {
         title: "Staff Backend - PIM (Project Internal Maintenance)",
         company: "KSM Android UPNVJ",
-        period: "Feb 2025 – Sekarang",
+        period: "Feb 2025 - now",
         description: [
-          "Merawat dan melanjutkan pengembangan aplikasi web",
-          "Membuat beberapa validation middleware seperti validation request body dan request query",
-          "Membuat API Specification (openAPI)",
+          "Maintaining and continuing the backend development of the web application",
+          "Creating several validation middleware, such as request body and query validation",
+          "Creating an API Specification (openAPI)",
+          "Creating file upload and deletion configurations to Cloudflare"
         ],
       },
     ],
