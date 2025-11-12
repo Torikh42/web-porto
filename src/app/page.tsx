@@ -78,7 +78,7 @@ export default function Home() {
       ],
       Frontend: ["ReactJS", "Tailwind CSS", "Next.js", "React Native", "Expo"],
       "Version Control": ["Git/GitHub"],
-      Tools: ["Postman", "Docker", "Figma"],
+      Tools: ["Postman", "Docker", "Figma", "n8n"],
     },
     experience: [
       {
