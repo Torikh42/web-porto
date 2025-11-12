@@ -62,7 +62,7 @@ export default function Home() {
     phone: "+62 878-9274-9782",
     linkedin: "https://www.linkedin.com/in/torikh-abdullah-naser-80a738320/",
     description:
-      "Mahasiswa Sistem Informasi di Universitas Pembangunan Nasional Veteran Jakarta dengan minat dalam pengembangan backend. Memiliki pengalaman dalam organisasi serta kompetisi pencak silat. Menguasai teknologi backend basic dan frontend basic serta beberapa bahasa pemrograman seperti JavaScript, Node.js, MySQL, MongoDB, Express, C, C++, Git, dan GitHub.",
+      "An Information Systems student at UPN Veteran Jakarta with a strong interest in Software Engineering. Actively involved in organizations and competitions to hone technical skills, leadership skills, and build extensive networks.",
     skills: {
       "Programming Language": ["JavaScript/TypeScript", "C/C++"],
       Backend: [
