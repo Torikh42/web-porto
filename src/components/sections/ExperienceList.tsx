@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 interface Experience {
   title: string;
   company: string;
+  companyUrl?: string;
   period: string;
   description: string[];
 }
@@ -33,11 +34,38 @@ export default function ExperienceList({ experience }: ExperienceListProps) {
             </span>
           </div>
           <div className="text-sm text-primary mb-4 font-medium">
-            {exp.company}
+            {exp.companyUrl ? (
+              <a
+                href={exp.companyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline hover:text-primary-foreground transition-colors inline-flex items-center gap-1"
+              >
+                {exp.company}
+                <svg
+                  className="w-3 h-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+            ) : (
+              exp.company
+            )}
           </div>
           <ul className="space-y-2">
             {exp.description.map((desc, idx) => (
-              <li key={idx} className="text-muted-foreground leading-relaxed text-sm pl-4 border-l border-white/10 hover:border-primary/50 transition-colors duration-200">
+              <li
+                key={idx}
+                className="text-muted-foreground leading-relaxed text-sm pl-4 border-l border-white/10 hover:border-primary/50 transition-colors duration-200"
+              >
                 {desc}
               </li>
             ))}
