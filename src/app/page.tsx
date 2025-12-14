@@ -12,6 +12,7 @@ import {
 import { Github, MapPin, Mail, Linkedin, GithubIcon } from "lucide-react";
 import ExperienceList from "@/components/sections/ExperienceList";
 import ProjectCard from "@/components/cards/ProjectCard";
+import MobileNav from "@/components/ui/MobileNav";
 
 interface Project {
   id: number;
@@ -110,6 +111,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen font-sans selection:bg-primary/20 selection:text-primary bg-[#08090A]">
+      <MobileNav />
       <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
         <div className="lg:flex lg:justify-between lg:gap-4">
           <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
