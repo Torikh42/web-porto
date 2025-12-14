@@ -26,7 +26,6 @@ export default function MobileNav() {
 
   return (
     <div className="lg:hidden">
-      {/* Hamburger Button */}
       <button
         onClick={toggleMenu}
         className="fixed top-6 right-6 z-50 p-2 rounded-md bg-[#141517]/80 backdrop-blur-md border border-white/[0.08] text-white hover:bg-[#1C1C1F] transition-colors"
