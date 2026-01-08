@@ -8,6 +8,7 @@ interface Experience {
   companyUrl?: string;
   period: string;
   description: string[];
+  techstack?: string[];
 }
 
 interface ExperienceListProps {
@@ -60,7 +61,7 @@ export default function ExperienceList({ experience }: ExperienceListProps) {
               exp.company
             )}
           </div>
-          <ul className="space-y-2">
+          <ul className="space-y-2 mb-4">
             {exp.description.map((desc, idx) => (
               <li
                 key={idx}
@@ -70,6 +71,18 @@ export default function ExperienceList({ experience }: ExperienceListProps) {
               </li>
             ))}
           </ul>
+          {exp.techstack && (
+            <div className="flex flex-wrap gap-2">
+              {exp.techstack.map((tech, idx) => (
+                <span
+                  key={idx}
+                  className="flex items-center rounded-full bg-white/5 px-3 py-1 text-xs font-medium leading-5 text-primary-foreground/80 hover:bg-white/10 hover:text-primary-foreground transition-colors cursor-default"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          )}
         </motion.div>
       ))}
     </div>

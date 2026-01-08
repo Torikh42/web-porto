@@ -77,12 +77,25 @@ export default function Home() {
         title: "Staff Backend - PIM (Project Internal Maintenance)",
         company: "KSM Android UPNVJ",
         companyUrl: "https://www.instagram.com/androidupnvj/",
-        period: "Feb 2025 - Present",
+        period: "Feb 2025 - Dec 2025",
         description: [
           "Centralized event announcements for 100-200 members, reducing manual broadcast time by ~30-60 minutes/month and improving event awareness.",
           "Built 6-8 stable REST endpoints with full OpenAPI docs to streamline development and integration.",
           "Improved backend efficiency with validation middleware and optimized Cloudflare file handling.",
         ],
+        techstack: ["TypeScript", "Node.js", "Express.js", "OpenAPI", "Cloudflare", "PostgreSQL", "Prisma", "Zod"],
+      },
+      {
+        title: "Backend Developer - Vexpro x Code Sheesh (SDN Joglo 05 Pagi Project)",
+        company: "KSM Android UPNVJ",
+        companyUrl: "https://www.instagram.com/androidupnvj/",
+        period: "Jan 2026 - Present",
+        description: [
+          "Architected a modular and scalable database schema using Drizzle ORM to integrate academic data and environmental programs (7 Habits, Waste Bank, and Composting) across 15+ tables.",
+          "Implemented automated data aggregation to calculate real-time \"School Achievement\" metrics, including attendance averages, 7-habit scores, and environmental impact (liters of oil collected, kg of waste processed).",
+          "Built high-performance RESTful APIs using Bun and TypeScript, maintaining a response time target of <2 seconds for complex dashboard operations and data exports (.csv).",
+        ],
+        techstack: ["TypeScript", "bun", "hono", "PostgreSQL", "Drizzle", "BetterAuth", "Zod"],
       },
     ],
     achievements: [
