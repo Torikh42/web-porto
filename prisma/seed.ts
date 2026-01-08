@@ -49,6 +49,16 @@ async function main() {
       imageUrl:
         "https://res.cloudinary.com/dsw1iot8d/image/upload/v1759743632/zoomate_hewnvp.jpg",
     },
+    {
+      title: "Flexora",
+      description:
+        "Flexora is a modern web application for managing fitness class reservations and membership systems in fitness studios. Built with Laravel 11, Blade templating, and Tailwind CSS to provide a responsive and intuitive user experience.",
+      url: "https://github.com/Torikh42/flexora-laravel",
+      techstack:
+        "Laravel, Blade templating, Tailwind CSS, mysql",
+      imageUrl:
+        "https://res.cloudinary.com/dsw1iot8d/image/upload/v1767874457/Screenshot_2025-11-20_082831_cv3lff.png",
+    },
   ];
 
   for (const p of projects) {
