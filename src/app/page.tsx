@@ -73,6 +73,7 @@ export default function Home() {
         "Supabase",
       ],
       Frontend: ["React", "Next.js", "Tailwind CSS"],
+      Mobile: ["React Native", "Expo", "Nativewind"],
       Tools: ["Git", "Docker", "Postman", "Figma", "n8n"],
     },
     experience: [
