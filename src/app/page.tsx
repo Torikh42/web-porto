@@ -64,6 +64,9 @@ export default function Home() {
       Backend: [
         "Node.js",
         "Express.js",
+        "Bun",
+        "Hono",
+        "Drizzle",
         "PostgreSQL",
         "MongoDB",
         "Prisma",
