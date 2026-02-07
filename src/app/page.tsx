@@ -73,7 +73,7 @@ export default function Home() {
         "Supabase",
       ],
       Frontend: ["React", "Next.js", "Tailwind CSS"],
-      Tools: ["Git", "Docker", "Postman", "Figma"],
+      Tools: ["Git", "Docker", "Postman", "Figma", "n8n"],
     },
     experience: [
       {

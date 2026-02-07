@@ -26,7 +26,7 @@ async function main() {
         "This project was created as part of the registration requirements for Compfest Academy. I used Next.js and Supabase to build it. The website design was made with Tailwind CSS, and I used Vercel to publish it online.",
       url: "https://github.com/Torikh42/sea-catering",
       techstack:
-        "Nextjs, Supabase, Typescript, Tailwind CSS, Vercel, cloudinary, shadcn/ui",
+        "Nextjs, Supabase, Typescript, Tailwind CSS, Vercel, cloudinary, shadcn/ui, n8n",
       imageUrl:
         "https://res.cloudinary.com/dsw1iot8d/image/upload/v1753522728/sea-catering_siufqb.png",
     },
