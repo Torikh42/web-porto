@@ -75,8 +75,8 @@ export default function Home() {
     experience: [
       {
         title: "Staff Backend - PIM (Project Internal Maintenance)",
-        company: "KSM Android UPNVJ",
-        companyUrl: "https://www.instagram.com/androidupnvj/",
+        company: "KSM Veterantech UPNVJ",
+        companyUrl: "https://www.instagram.com/veterantechupnvj",
         period: "Feb 2025 - Dec 2025",
         description: [
           "Centralized event announcements for 100-200 members, reducing manual broadcast time by ~30-60 minutes/month and improving event awareness.",
