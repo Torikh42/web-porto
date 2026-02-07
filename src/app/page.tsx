@@ -87,8 +87,8 @@ export default function Home() {
       },
       {
         title: "Backend Developer - Vexpro x Code Sheesh (SDN Joglo 05 Pagi Project)",
-        company: "KSM Android UPNVJ",
-        companyUrl: "https://www.instagram.com/androidupnvj/",
+        company: "KSM Veterantech UPNVJ",
+        companyUrl: "https://www.instagram.com/veterantechupnvj",
         period: "Jan 2026 - Present",
         description: [
           "Architected a modular and scalable database schema using Drizzle ORM to integrate academic data and environmental programs (7 Habits, Waste Bank, and Composting) across 15+ tables.",
@@ -111,12 +111,12 @@ export default function Home() {
       },
       {
         name: "Backend Beginner Study Club",
-        issuer: "KSM Android UPNVJ",
+        issuer: "KSM Veterantech UPNVJ",
         date: "July 2025",
       },
       {
         name: "Backend Basic Study Club",
-        issuer: "KSM Android UPNVJ",
+        issuer: "KSM Veterantech UPNVJ",
         date: "Jan 2025",
       },
     ],
