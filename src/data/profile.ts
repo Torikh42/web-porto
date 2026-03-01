@@ -45,11 +45,11 @@ export const profileData: ProfileData = {
       companyUrl: "https://www.instagram.com/veterantechupnvj",
       period: "Jan 2026 - Present",
       description: [
-        "Architected a modular and scalable database schema using Drizzle ORM to integrate academic data and environmental programs (7 Habits, Waste Bank, and Composting) across 15+ tables.",
-        "Implemented automated data aggregation to calculate real-time School Achievement metrics, including attendance averages, 7-habit scores, and environmental impact (liters of oil collected, kg of waste processed).",
-        "Built high-performance RESTful APIs using Bun and TypeScript, maintaining a response time target of <2 seconds for complex dashboard operations and data exports (.csv).",
+        "System Architecture & Database Design: Engineered a modular, high-performance RESTful API and scalable PostgreSQL database (15+ tables) using Bun, Hono, and Drizzle ORM, enforcing strict type-safety (Zod) and automated OpenAPI documentation.",
+        "Security & Atomic Transactions: Developed robust bulk-processing workflows (e.g., class-wide attendance) using atomic transactions and strict Role-Based Access Control (RBAC), actively mitigating IDOR vulnerabilities by dynamically verifying teacher-class authority.",
+        "Feature Optimization & Aggregation: Built an optimized Centralized Notification System and real-time dashboard metrics (attendance, habit scores), utilizing composite database indexing to sustain <2s response times for complex queries and data exports.",
       ],
-      techstack: ["TypeScript", "bun", "hono", "PostgreSQL", "Drizzle", "BetterAuth", "Zod"],
+      techstack: ["TypeScript, Bun, Hono, PostgreSQL, Docker, Drizzle ORM, BetterAuth, Zod, OpenAPI"],
     },
   ],
   achievements: [
