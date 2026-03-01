@@ -1,15 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-interface Experience {
-  title: string;
-  company: string;
-  companyUrl?: string;
-  period: string;
-  description: string[];
-  techstack?: string[];
-}
+import { Experience } from "@/types";
 
 interface ExperienceListProps {
   experience: Experience[];
