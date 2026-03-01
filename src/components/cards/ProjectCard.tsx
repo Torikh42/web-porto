@@ -10,14 +10,7 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 
-interface Project {
-  id: number;
-  title: string;
-  description: string | null;
-  url: string | null;
-  techstack: string;
-  imageUrl: string | null;
-}
+import { Project } from "@/types";
 
 interface ProjectCardProps {
   project: Project;
