@@ -42,14 +42,14 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
               >
-                <span className="text-zinc-300">"{category.toLowerCase()}"</span><span className="text-zinc-300">:</span> <span className="text-yellow-300">[</span>
+                <span className="text-zinc-300">&quot;{category.toLowerCase()}&quot;</span><span className="text-zinc-300">:</span> <span className="text-yellow-300">[</span>
                 <div className="flex flex-wrap gap-2 pl-4 md:pl-8 my-2">
                   {skillList.map((skill, sIdx) => (
                     <span
                       key={skill}
                       className="text-app-accent hover:text-white hover:bg-app-accent/20 px-2 py-0.5 rounded cursor-default transition-colors"
                     >
-                      "{skill}"{sIdx < skillList.length - 1 ? <span className="text-zinc-300">,</span> : ""}
+                      &quot;{skill}&quot;{sIdx < skillList.length - 1 ? <span className="text-zinc-300">,</span> : ""}
                     </span>
                   ))}
                 </div>

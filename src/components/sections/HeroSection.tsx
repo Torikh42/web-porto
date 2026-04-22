@@ -64,7 +64,7 @@ export default function HeroSection({ profileData }: HeroSectionProps) {
           className="text-2xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-zinc-300 mb-8 ml-4 md:ml-8"
         >
           <span className="text-app-muted font-jetbrains text-xl sm:text-3xl mr-4 opacity-50">role:</span>
-          <span className="text-app-accent text-glow-accent">"{profileData.title}"</span>
+          <span className="text-app-accent text-glow-accent">&quot;{profileData.title}&quot;</span>
           <span className="text-app-muted font-jetbrains text-xl sm:text-3xl opacity-50">,</span>
         </motion.h2>
 
@@ -73,7 +73,7 @@ export default function HeroSection({ profileData }: HeroSectionProps) {
           className="max-w-2xl text-lg sm:text-xl text-zinc-400 leading-relaxed ml-4 md:ml-8"
         >
           <span className="text-app-muted font-jetbrains text-base sm:text-lg mr-4 opacity-50">desc:</span>
-          "{profileData.description}"
+          &quot;{profileData.description}&quot;
         </motion.p>
         
         <motion.div variants={item} className="font-jetbrains text-app-muted text-sm md:text-base mt-6">
