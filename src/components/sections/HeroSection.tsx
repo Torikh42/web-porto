@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { GithubIcon, Linkedin, Mail, MapPin } from "lucide-react";
+import { motion, Variants } from "framer-motion";
 import { ProfileData } from "@/types";
 
 interface HeroSectionProps {
@@ -9,94 +8,87 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ profileData }: HeroSectionProps) {
+  // Animation variants
+  const container: Variants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const item: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } },
+  };
+
   return (
-    <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
-      <div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            {profileData.name}
-          </h1>
-          <h2 className="mt-3 text-lg font-medium tracking-tight text-white sm:text-xl">
-            {profileData.title}
-          </h2>
-          <p className="mt-4 max-w-xs leading-normal text-muted-foreground">
-            {profileData.description}
-          </p>
-
-          <nav className="nav hidden lg:block mt-16">
-            <ul className="mt-16 w-max">
-              <li>
-                <a className="group flex items-center py-3 active" href="#experience">
-                  <span className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-white motion-reduce:transition-none"></span>
-                  <span className="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-white group-focus-visible:text-white">
-                    Experience
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a className="group flex items-center py-3" href="#projects">
-                  <span className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-white motion-reduce:transition-none"></span>
-                  <span className="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-white group-focus-visible:text-white">
-                    Projects
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a className="group flex items-center py-3" href="#skills">
-                  <span className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-white motion-reduce:transition-none"></span>
-                  <span className="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-white group-focus-visible:text-white">
-                    Skills
-                  </span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+    <section id="home" className="relative flex flex-col justify-center min-h-screen pt-20 pb-32">
+      {/* Background Mesh Gradient */}
+      <div className="mesh-gradient" />
+      
+      <motion.div 
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="max-w-4xl z-10"
+      >
+        <motion.div variants={item} className="mb-4">
+          <span className="inline-block py-1 px-3 rounded-full bg-app-accent/10 border border-app-accent/20 text-app-accent text-sm font-jetbrains">
+            System Online. Welcome.
+          </span>
         </motion.div>
-      </div>
 
-      <ul className="ml-1 mt-8 flex items-center gap-5 lg:mt-0" aria-label="Social media">
-        <li>
-          <a
-            href={profileData.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-white transition-colors"
-          >
-            <GithubIcon className="h-6 w-6" />
-            <span className="sr-only">GitHub</span>
+        {/* Code-style introduction */}
+        <motion.div variants={item} className="font-jetbrains text-app-muted text-sm md:text-base mb-6">
+          <span className="text-pink-500">const</span>{" "}
+          <span className="text-blue-400">developer</span>{" "}
+          <span className="text-app-text">=</span>{" "}
+          <span className="text-yellow-300">{`{`}</span>
+        </motion.div>
+
+        <motion.h1 
+          variants={item}
+          className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tighter text-white mb-2 ml-4 md:ml-8"
+        >
+          <span className="text-app-muted font-jetbrains text-2xl sm:text-4xl mr-4 opacity-50">name:</span>
+          <span className="text-glow">{profileData.name}</span>
+          <span className="text-app-muted font-jetbrains text-2xl sm:text-4xl opacity-50">,</span>
+        </motion.h1>
+
+        <motion.h2 
+          variants={item}
+          className="text-2xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-zinc-300 mb-8 ml-4 md:ml-8"
+        >
+          <span className="text-app-muted font-jetbrains text-xl sm:text-3xl mr-4 opacity-50">role:</span>
+          <span className="text-app-accent text-glow-accent">&quot;{profileData.title}&quot;</span>
+          <span className="text-app-muted font-jetbrains text-xl sm:text-3xl opacity-50">,</span>
+        </motion.h2>
+
+        <motion.p 
+          variants={item}
+          className="max-w-2xl text-lg sm:text-xl text-zinc-400 leading-relaxed ml-4 md:ml-8"
+        >
+          <span className="text-app-muted font-jetbrains text-base sm:text-lg mr-4 opacity-50">desc:</span>
+          &quot;{profileData.description}&quot;
+        </motion.p>
+        
+        <motion.div variants={item} className="font-jetbrains text-app-muted text-sm md:text-base mt-6">
+          <span className="text-yellow-300">{`}`}</span><span className="text-app-text">;</span>
+        </motion.div>
+
+        <motion.div variants={item} className="mt-12 flex flex-wrap gap-4 items-center">
+          <a href="#projects" className="px-6 py-3 bg-app-accent text-black font-bold font-syne rounded-md hover:bg-yellow-400 transition-colors glow-box">
+            Execute.Projects()
           </a>
-        </li>
-        <li>
-          <a
-            href={profileData.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-white transition-colors"
-          >
-            <Linkedin className="h-6 w-6" />
-            <span className="sr-only">LinkedIn</span>
+          <a href={`mailto:${profileData.email}`} className="px-6 py-3 bg-transparent border border-white/20 text-white font-syne rounded-md hover:bg-white/10 transition-colors">
+            Contact.Init()
           </a>
-        </li>
-        <li>
-          <a
-            href={`mailto:${profileData.email}`}
-            className="text-muted-foreground hover:text-white transition-colors"
-          >
-            <Mail className="h-6 w-6" />
-            <span className="sr-only">Email</span>
-          </a>
-        </li>
-        <li>
-          <div className="flex items-center gap-2 text-muted-foreground text-sm">
-            <MapPin className="h-4 w-4" />
-            <span>{profileData.location}</span>
-          </div>
-        </li>
-      </ul>
-    </header>
+        </motion.div>
+      </motion.div>
+    </section>
   );
 }
