@@ -3,13 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
-
 import { Project } from "@/types";
 
 interface ProjectCardProps {
@@ -24,59 +17,78 @@ export default function ProjectCard({
   return (
     <motion.div
       onClick={() => setSelectedProject(project)}
-      className="group cursor-pointer h-full"
-      whileHover={{ y: -4 }}
-      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      className="group relative w-full cursor-pointer h-full perspective-container"
+      whileHover="hover"
+      initial="initial"
     >
-      <Card className="h-full overflow-hidden border border-white/10 bg-[#141517] hover:border-white/20 hover:bg-[#1A1B1E] transition-all duration-300 flex flex-col">
-        <CardHeader className="p-0 relative aspect-video overflow-hidden">
-          {project.imageUrl ? (
-            <Image
-              src={project.imageUrl}
-              alt={`Screenshot of ${project.title}`}
-              fill
-              style={{ objectFit: "cover" }}
-              className="transition-transform duration-500 group-hover:scale-105"
-            />
-          ) : (
-            <div className="w-full h-full bg-white/5 flex items-center justify-center">
-              <span className="text-muted-foreground text-sm">No Image</span>
-            </div>
-          )}
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-        </CardHeader>
+      <motion.div
+        variants={{
+          initial: { rotateX: 0, rotateY: 0, y: 0 },
+          hover: { rotateX: 2, rotateY: -2, y: -5 },
+        }}
+        transition={{ type: "spring", stiffness: 400, damping: 30 }}
+        className="h-full relative preserve-3d"
+      >
+        {/* Animated Gradient Border */}
+        <div className="absolute -inset-[1px] rounded-xl bg-gradient-to-r from-white/10 via-white/5 to-white/10 group-hover:from-app-accent/50 group-hover:via-app-accent/20 group-hover:to-app-accent/50 opacity-50 group-hover:opacity-100 transition-opacity duration-500 blur-[2px]" />
         
-        <CardContent className="p-5 flex-grow">
-          <div className="flex items-start justify-between gap-2 mb-3">
-            <h3 className="text-lg font-semibold text-white group-hover:text-primary transition-colors">
-              {project.title}
-            </h3>
-            <ArrowUpRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+        <div className="relative h-full flex flex-col bg-app-card border border-white/5 rounded-xl overflow-hidden preserve-3d backdrop-blur-sm z-10">
+          
+          {/* Image Header */}
+          <div className="relative aspect-video overflow-hidden">
+            {project.imageUrl ? (
+              <Image
+                src={project.imageUrl}
+                alt={`Screenshot of ${project.title}`}
+                fill
+                style={{ objectFit: "cover" }}
+                className="transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+              />
+            ) : (
+              <div className="w-full h-full bg-white/5 flex items-center justify-center">
+                <span className="font-jetbrains text-app-muted text-sm">&lt;no_image /&gt;</span>
+              </div>
+            )}
+            
+            {/* Overlay Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-app-bg/90 via-app-bg/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300" />
+            
+            {/* Top-right Icon */}
+            <div className="absolute top-4 right-4 bg-black/50 p-2 rounded-full backdrop-blur-md border border-white/10 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+              <ArrowUpRight className="w-4 h-4 text-app-accent" />
+            </div>
           </div>
           
-          <p className="text-sm text-muted-foreground line-clamp-3 mb-4 leading-relaxed">
-            {project.description}
-          </p>
-        </CardContent>
-
-        <CardFooter className="p-5 pt-0 mt-auto">
-          <div className="flex flex-wrap gap-2">
-            {project.techstack.split(",").slice(0, 3).map((tech) => (
-              <span 
-                key={tech} 
-                className="text-[10px] uppercase tracking-wider text-muted-foreground bg-white/5 px-2 py-1 rounded border border-white/5"
-              >
-                {tech.trim()}
-              </span>
-            ))}
-            {project.techstack.split(",").length > 3 && (
-              <span className="text-[10px] uppercase tracking-wider text-muted-foreground px-1 py-1">
-                +{project.techstack.split(",").length - 3}
-              </span>
-            )}
+          {/* Content */}
+          <div className="p-6 flex-grow flex flex-col relative z-20">
+            <h3 className="text-xl font-syne font-bold text-white group-hover:text-app-accent transition-colors mb-2">
+              {project.title}
+            </h3>
+            
+            <p className="text-sm text-zinc-400 line-clamp-3 mb-6 leading-relaxed font-jetbrains">
+              {project.description}
+            </p>
+            
+            {/* Tags */}
+            <div className="flex flex-wrap gap-2 mt-auto">
+              {project.techstack.split(",").slice(0, 4).map((tech) => (
+                <span 
+                  key={tech} 
+                  className="text-[10px] uppercase tracking-wider text-app-accent bg-app-accent/10 px-2 py-1 border border-app-accent/20 rounded-md font-jetbrains"
+                >
+                  {tech.trim()}
+                </span>
+              ))}
+              {project.techstack.split(",").length > 4 && (
+                <span className="text-[10px] uppercase tracking-wider text-zinc-500 bg-white/5 px-2 py-1 rounded-md font-jetbrains">
+                  +{project.techstack.split(",").length - 4}
+                </span>
+              )}
+            </div>
           </div>
-        </CardFooter>
-      </Card>
+
+        </div>
+      </motion.div>
     </motion.div>
   );
 }

@@ -4,11 +4,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import ExperienceList from "@/components/sections/ExperienceList";
 import ProjectCard from "@/components/cards/ProjectCard";
-import MobileNav from "@/components/ui/MobileNav";
 import HeroSection from "@/components/sections/HeroSection";
 import SkillsSection from "@/components/sections/SkillsSection";
 import AchievementsSection from "@/components/sections/AchievementsSection";
 import ProjectDetailModal from "@/components/sections/ProjectDetailModal";
+import { FloatingDock } from "@/components/ui/FloatingDock";
 import { profileData } from "@/data/profile";
 import { useProjects } from "@/hooks/useProjects";
 import { Project } from "@/types";
@@ -18,80 +18,89 @@ export default function Home() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <div className="min-h-screen font-sans selection:bg-primary/20 selection:text-primary bg-[#08090A]">
-      <MobileNav />
-      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
-        <div className="lg:flex lg:justify-between lg:gap-4">
-          <HeroSection profileData={profileData} />
+    <div className="min-h-screen bg-app-bg text-app-text selection:bg-app-accent/20 selection:text-app-accent relative">
+      {/* Top/Bottom Edge Gradients for Depth */}
+      <div className="fixed top-0 inset-x-0 h-32 bg-gradient-to-b from-app-bg to-transparent pointer-events-none z-40" />
+      <div className="fixed bottom-0 inset-x-0 h-40 bg-gradient-to-t from-app-bg to-transparent pointer-events-none z-40" />
 
-          <main className="pt-24 lg:w-1/2 lg:py-24">
-            <motion.section
-              id="experience"
-              className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-[#08090A]/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                <h2 className="text-sm font-bold uppercase tracking-widest text-white lg:sr-only">
-                  Experience
-                </h2>
+      {/* Main Navigation */}
+      <FloatingDock />
+
+      <main className="max-w-6xl mx-auto px-6 sm:px-12 relative z-10 pb-40">
+        <HeroSection profileData={profileData} />
+
+        {/* Content Sections Wrapper */}
+        <div className="space-y-32">
+          
+          <motion.section
+            id="experience"
+            className="scroll-mt-24"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="mb-12 flex items-center gap-4">
+              <h2 className="text-3xl font-syne font-bold text-white tracking-tight">
+                Experience
+              </h2>
+              <div className="h-px bg-white/10 flex-grow" />
+            </div>
+            <ExperienceList experience={profileData.experience} />
+          </motion.section>
+
+          <motion.section
+            id="projects"
+            className="scroll-mt-24"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="mb-12 flex items-center gap-4">
+              <h2 className="text-3xl font-syne font-bold text-white tracking-tight">
+                Projects
+              </h2>
+              <div className="h-px bg-white/10 flex-grow" />
+            </div>
+
+            {loading ? (
+              <div className="text-app-muted font-jetbrains animate-pulse">
+                &gt; Loading_Projects...
               </div>
-              <ExperienceList experience={profileData.experience} />
-            </motion.section>
-
-            <motion.section
-              id="projects"
-              className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-[#08090A]/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                <h2 className="text-sm font-bold uppercase tracking-widest text-white lg:sr-only">
-                  Projects
-                </h2>
+            ) : error ? (
+              <div className="text-red-400 font-jetbrains">
+                &gt; Error: {error}
               </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {projects.map((project) => (
+                  <ProjectCard
+                    key={project.id}
+                    project={project}
+                    setSelectedProject={setSelectedProject}
+                  />
+                ))}
+              </div>
+            )}
+          </motion.section>
 
-              {loading ? (
-                <div className="text-sm text-muted-foreground">
-                  Loading projects...
-                </div>
-              ) : error ? (
-                <div className="text-sm text-red-400">
-                  Error loading projects
-                </div>
-              ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {projects.map((project) => (
-                    <ProjectCard
-                      key={project.id}
-                      project={project}
-                      setSelectedProject={setSelectedProject}
-                    />
-                  ))}
-                </div>
-              )}
-            </motion.section>
+          <SkillsSection skills={profileData.skills} />
 
-            <SkillsSection skills={profileData.skills} />
+          <AchievementsSection 
+            achievements={profileData.achievements} 
+            certifications={profileData.certifications} 
+          />
 
-            <AchievementsSection 
-              achievements={profileData.achievements} 
-              certifications={profileData.certifications} 
-            />
-
-            <footer className="pt-8 text-sm text-muted-foreground">
-              <p>
-                &copy; {new Date().getFullYear()} {profileData.name}. Built
-                with Next.js & Tailwind.
-              </p>
-            </footer>
-          </main>
         </div>
-      </div>
+
+        <footer className="mt-32 pt-8 pb-12 border-t border-white/10 text-center">
+          <p className="text-sm text-zinc-500 font-jetbrains">
+            &copy; {new Date().getFullYear()} {profileData.name}. 
+            <span className="block sm:inline sm:ml-2">System build stable.</span>
+          </p>
+        </footer>
+      </main>
 
       <ProjectDetailModal 
         project={selectedProject} 
