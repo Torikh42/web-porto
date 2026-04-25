@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Home, Briefcase, Code2, Cpu, Github, Linkedin, Mail, LucideIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { profileData } from "@/data/profile";
 
 interface DockItemType {
   id: string;
@@ -21,9 +22,9 @@ const navItems: DockItemType[] = [
 ];
 
 const socialItems: DockItemType[] = [
-  { id: "github", label: "GitHub", icon: Github, href: "https://github.com", external: true },
-  { id: "linkedin", label: "LinkedIn", icon: Linkedin, href: "https://linkedin.com", external: true },
-  { id: "email", label: "Email", icon: Mail, href: "mailto:hello@example.com", external: true },
+  { id: "github", label: "GitHub", icon: Github, href: profileData.github, external: true },
+  { id: "linkedin", label: "LinkedIn", icon: Linkedin, href: profileData.linkedin, external: true },
+  { id: "email", label: "Email", icon: Mail, href: `mailto:${profileData.email}`, external: true },
 ];
 
 export function FloatingDock() {
