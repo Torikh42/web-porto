@@ -11,6 +11,36 @@ async function main() {
 
   const projects = [
     {
+      title: "RentSafe AI",
+      description:
+        "RentSafe AI is an AI-powered property rental and dispute resolution platform targeting Indonesia's 9.3M student tenants and landlords. It solves the 'justice gap' (where legal fees exceed deposit values) by automating contract generation, property inspections, and dispute mediation using Gemini AI and a Midtrans escrow system.",
+      url: "https://github.com/Torikh42/RentSafe-ai-fe",
+      techstack:
+        "Next.js, Tailwind CSS, Cloudflare Workers, Hono, PostgreSQL (Neon), Drizzle ORM, Midtrans, Gemini AI API, Better Auth",
+      imageUrl:
+        "https://res.cloudinary.com/dsw1iot8d/image/upload/v1781354139/Screenshot_2026-06-13_193342_aabdta.png",
+    },
+    {
+      title: "Pesta Warna Nada",
+      description:
+        "Pesta Warna Nada is a modern web application for a concert platform. It features Google OAuth integration via Better Auth, interactive gamification workflows (personality quiz, promo claims), and was engineered to handle massive event-driven traffic spikes (2.4K+ concurrent peak requests) with ultra-low latency.",
+      url: "https://pestawarnanada.com/",
+      techstack:
+        "TypeScript, Cloudflare Workers, Hono, PostgreSQL, Drizzle ORM, Better Auth, Zod, OpenAPI",
+      imageUrl:
+        "https://res.cloudinary.com/dsw1iot8d/image/upload/v1781354434/Screenshot_2026-06-13_193953_ggdaan.png",
+    },
+    {
+      title: "SDN Joglo 05 Pagi Portal",
+      description:
+        "A modern administrative web portal and management system built for SDN Joglo 05 Pagi. It features secure Role-Based Access Control (RBAC), atomic database transactions for bulk data operations (e.g., class attendance), and optimized composite database indexing to sustain fast query response times under 2 seconds.",
+      url: "https://sdnjoglo05.sch.id/id",
+      techstack:
+        "TypeScript, Bun, Hono, PostgreSQL, Docker, Drizzle ORM, BetterAuth, Zod, OpenAPI",
+      imageUrl:
+        "https://res.cloudinary.com/dsw1iot8d/image/upload/v1781354470/Screenshot_2026-06-13_194045_noixzb.png",
+    },
+    {
       title: "Papua Mandiri",
       description:
         "Papua Mandiri is an innovative digital platform aimed at empowering local communities in Papua through two main pillars: education and economics. It provides a platform for sharing learning materials on local natural resource management, while also facilitating a workflow through which community-led products can be offered, reviewed, and ordered by government agencies.",
