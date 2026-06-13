@@ -1,13 +1,25 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, Variants, AnimatePresence } from "framer-motion";
 import { ProfileData } from "@/types";
 
 interface HeroSectionProps {
   profileData: ProfileData;
 }
 
+const roles = ["software_engineer", "systems_architect", "problem_solver", "creator", "student"];
+
 export default function HeroSection({ profileData }: HeroSectionProps) {
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
+
   // Animation variants
   const container: Variants = {
     hidden: { opacity: 0 },
@@ -43,10 +55,23 @@ export default function HeroSection({ profileData }: HeroSectionProps) {
         </motion.div>
 
         {/* Code-style introduction */}
-        <motion.div variants={item} className="font-jetbrains text-app-muted text-sm md:text-base mb-6">
-          <span className="text-pink-500">const</span>{" "}
-          <span className="text-blue-400">developer</span>{" "}
-          <span className="text-app-text">=</span>{" "}
+        <motion.div variants={item} className="font-jetbrains text-app-muted text-sm md:text-base mb-6 flex items-center h-8">
+          <span className="text-pink-500 mr-2">const</span>
+          <div className="relative flex items-center w-[140px] md:w-[160px] h-full">
+            <AnimatePresence mode="popLayout">
+              <motion.span
+                key={roleIndex}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -20, opacity: 0 }}
+                transition={{ duration: 0.4, type: "spring", bounce: 0 }}
+                className="text-blue-400 absolute left-0 whitespace-nowrap"
+              >
+                {roles[roleIndex]}
+              </motion.span>
+            </AnimatePresence>
+          </div>
+          <span className="text-app-text mx-2">=</span>
           <span className="text-yellow-300">{`{`}</span>
         </motion.div>
 
